@@ -1,0 +1,21 @@
+<div>I'm Playback</div>
+{#
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous"></script>
+<script src="{{ url_for('static',filename='js.js') }}"></script>
+#}
+<script>
+    const playback = 0;
+    let scripts_playback_monent = getScriptOnce("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js");
+    let scripts_playback_js = getScriptOnce("{{ url_for('static',filename='js.js') }}");
+    let scripts_playback_js2 = getScriptOnce("{{ url_for('static',filename='js2.js') }}");
+    let scripts_playback_js3 = getScriptOnce("{{ url_for('static',filename='js2.js') }}");
+    function load_playback() {
+        $("#load_status").text("Playback Loaded");
+    }
+    load_playback();
+    function unload_playback() {
+        $("#unload_status").text("Playback Unloaded");
+    }
+</script>

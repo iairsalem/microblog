@@ -1,0 +1,22 @@
+<div>I'm Profile</div>
+{#
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous"></script>
+<script src="{{ url_for('static',filename='js.js') }}"></script>
+#}
+<script>
+const profile = 0;
+let scripts_profile_monent = getScriptOnce("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js");
+let scripts_profile_js = getScriptOnce("{{ url_for('static',filename='js.js') }}");
+let scripts_profile_js2 = getScriptOnce("{{ url_for('static',filename='js2.js') }}");
+let scripts_profile_js3 = getScriptOnce("{{ url_for('static',filename='js2.js') }}");
+
+function load_profile(){
+    $("#load_status").text("Profile Loaded");
+}
+load_profile();
+function unload_profile(){
+    $("#unload_status").text("Profile Unloaded");
+}
+</script>

@@ -225,3 +225,16 @@ def notifications():
         'data': n.get_data(),
         'timestamp': n.timestamp
     } for n in notifications])
+
+
+@bp.route('/arena')
+def arena():
+    return render_template('arena.html')
+
+
+@bp.route('/sections/<section_name>')
+def section(section_name):
+    # texts ={"profile":"profile. I'm blue", "live":"live. Mamma Mia", "playback" :"playback. Chan"}
+    # return texts[section_name] if section_name in texts else "Houston, we have a problem"
+    if section_name in ["profile", "live", "playback"]:
+        return render_template(f'_{section_name}.html')

@@ -1,1 +1,4 @@
 FLASK_APP=microblog.py
+FLASK_RUN_PORT=2233
+SECRET_KEY=ldkcnakscidn938409-42rjnvav
+FLASK_ENV=development

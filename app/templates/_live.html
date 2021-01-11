@@ -1,0 +1,22 @@
+<div>I'm Live</div>
+{#
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous"></script>
+<script src="{{ url_for('static',filename='js.js') }}"></script>
+#}
+<script>
+    const live = 0;
+    let scripts_live_moment = getScriptOnce("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js");
+    let scripts_live_js = getScriptOnce("{{ url_for('static',filename='js.js') }}");
+    let scripts_live_js2 = getScriptOnce("{{ url_for('static',filename='js2.js') }}");
+    let scripts_live_js3 = getScriptOnce("{{ url_for('static',filename='js2.js') }}");
+
+    function load_live() {
+        $("#load_status").text("Live Loaded");
+    }
+    load_live();
+    function unload_live() {
+        $("#unload_status").text("Live Unloaded");
+    }
+</script>
